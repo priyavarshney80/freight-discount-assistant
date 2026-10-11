@@ -1,0 +1,13 @@
+Freight Discount Policy
+
+Eligibility Rule: A seller becomes eligible for a 10% freight discount on the following month's freight charges if they successfully fulfil 100 or more orders in the current month.
+
+What counts as "fulfilled": Only orders with status "Fulfilled" are counted towards the 100 order threshold. Orders that are Cancelled, marked as Failed Delivery, or Returned do not count towards eligibility, even if the order was originally placed.
+
+Discount Application: The 10% discount applies only to the freight charges of the month immediately following the month in which the seller crossed the 100 fulfilled order threshold. It does not apply retroactively to the current month's freight.
+
+Quarter Definition: A quarter consists of three consecutive calendar months. When ranking sellers by total discount earned in a quarter, the discount amounts from each eligible month within that quarter are added together.
+
+Access Rule: Individual sellers can only view their own eligibility and discount information. Cross seller comparisons, rankings, or leaderboard style views are restricted to Admin or Ops level users only.
+
+Custom Agreements: If a seller has a custom negotiated agreement uploaded to the system, the terms of that specific agreement take priority over this general policy for that seller only. All other sellers continue to follow this general policy.

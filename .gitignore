@@ -15,4 +15,12 @@ chroma_store/
 
 # Local or uploaded documents (review before sharing)
 uploaded_docs/
-data/
+# Local or uploaded documents
+uploaded_docs/
+
+# Demo data required for deployment
+!data/
+!data/orders_data.xlsx
+!data/seller_master.xlsx
+!data/policy_docs/
+!data/policy_docs/**

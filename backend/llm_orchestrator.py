@@ -1,3 +1,4 @@
+import os
 import re
 import json
 from openai import OpenAI
@@ -15,9 +16,12 @@ from analytics import get_top_sellers_by_discount, compare_sellers, compare_stat
 from rag_engine import retrieve_relevant_policy, get_seller_specific_document
 from time_utils import resolve_query_months, get_latest_month
 
-client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+client = OpenAI(
+    base_url=os.getenv("LLM_BASE_URL", "http://localhost:1234/v1"),
+    api_key=os.getenv("LLM_API_KEY", "lm-studio")
+)
 
-MODEL_NAME = "local-model"
+MODEL_NAME = os.getenv("LLM_MODEL", "local-model")
 
 # Session memory is now just the raw conversation history (like a normal chat),
 # plus a small cache of any custom agreement terms we've already looked up.
