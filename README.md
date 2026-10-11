@@ -5,6 +5,8 @@ platform policy, and cross-seller ranking, using a combination of structured dat
 (Excel), business rule logic, RAG over policy documents, and a locally hosted LLM
 (via LM Studio).
 
+Live Demo: https://freight-discount-assistant.onrender.com
+
 ## Folder structure
 
 ```
