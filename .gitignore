@@ -1,0 +1,18 @@
+# Python environment
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local databases and generated data
+chroma_store/
+.DS_Store
+
+# Local or uploaded documents (review before sharing)
+uploaded_docs/
+data/

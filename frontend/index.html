@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freight Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <aside class="rail" id="rail">
+    <div class="rail-top">
+      <div class="rail-brand">
+        <div class="rail-mark">FL</div>
+        <span class="rail-title">Freight Ledger</span>
+      </div>
+      <button class="rail-collapse-btn" id="collapseBtn" title="Collapse sidebar">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10.5 3L5.5 8L10.5 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <button class="new-chat-btn" id="newChatBtn">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      New conversation
+    </button>
+
+    <div class="rail-section">
+      <div class="rail-label">Upload agreement</div>
+      <div class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept=".pdf,.txt" hidden>
+        <div class="dropzone-text">Drop a PDF or text file, or click to browse</div>
+      </div>
+      <select id="sellerTagSelect" class="field-select">
+        <option value="">Applies to: General policy</option>
+      </select>
+      <div class="hint-text" id="uploadStatus"></div>
+    </div>
+
+    <div class="rail-section">
+      <div class="rail-label">Add a new seller</div>
+      <div class="field-row">
+        <input type="text" id="newSellerInput" class="field-input" placeholder="Seller name">
+        <button class="field-btn" id="addSellerBtn">Add</button>
+      </div>
+      <div class="hint-text" id="addSellerStatus"></div>
+    </div>
+
+    <div class="rail-section rail-about">
+      <div class="rail-label">About</div>
+      <p>Ask about fulfillment counts, discount eligibility, quarter totals, or platform policy. Admin view unlocks cross-seller rankings.</p>
+    </div>
+
+    <div class="rail-footer">
+      <span class="dot"></span> Local model connected
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <button class="expand-btn" id="expandBtn" title="Show sidebar">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5" stroke="currentColor" stroke-width="1.3"/><line x1="5.5" y1="2.5" x2="5.5" y2="13.5" stroke="currentColor" stroke-width="1.3"/></svg>
+      </button>
+      <span class="topbar-title">Freight Ledger</span>
+      <div class="role-pill" id="roleToggle">
+        <button class="role-pill-option active" data-role="seller">Seller</button>
+        <button class="role-pill-option" data-role="admin">Admin</button>
+      </div>
+    </header>
+
+    <section class="chat" id="chat">
+      <div class="chat-empty" id="chatEmpty">
+        <h1>Query the ledger</h1>
+        <p>Ask about seller eligibility, discounts, or policy.</p>
+        <div class="suggestion-row">
+          <button class="suggestion" data-q="What is the discount for Myntra?">What is the discount for Myntra?</button>
+          <button class="suggestion" data-q="Does a returned order count as fulfilled?">Does a returned order count as fulfilled?</button>
+          <button class="suggestion" data-q="Show me top sellers by discount this quarter">Top sellers this quarter</button>
+          <button class="suggestion" data-q="If ABC Fashion fulfills 95 more orders in August 2026, will they be eligible?">What if ABC Fashion fulfills 95 more orders?</button>
+          <button class="suggestion" data-q="Compare Myntra and ABC Fashion for August 2026">Compare Myntra and ABC Fashion</button>
+          <button class="suggestion" data-q="How many cancelled orders does ABC Fashion have?">Cancelled orders for ABC Fashion?</button>
+          <button class="suggestion" data-q="Compare cancellation rates among all sellers">Compare cancellation rates</button>
+        </div>
+      </div>
+    </section>
+
+    <form class="composer" id="composer">
+      <div class="composer-inner">
+        <input type="text" id="queryInput" placeholder="Ask about a seller, a policy, or request a ranking…" autocomplete="off">
+        <button type="submit" id="askButton">Ask</button>
+      </div>
+    </form>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

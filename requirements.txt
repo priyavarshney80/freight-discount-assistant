@@ -1,0 +1,9 @@
+pandas
+openpyxl
+openai
+chromadb
+fastapi
+uvicorn
+python-multipart
+pypdf
+python-dotenv
