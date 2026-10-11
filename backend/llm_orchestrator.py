@@ -599,8 +599,10 @@ def handle_query_with_meta(user_query, user_role="seller", session_id="default")
             tool_choice="auto",
             temperature=0.2
         )
-    except Exception:
-        answer = "Sorry, I could not reach the local model. Please check that LM Studio is running with a model loaded."
+    except Exception as e:
+        print(f"LLM API error: {e}")
+        answer = "Sorry, the AI service is temporarily unavailable. Please try again."
+
         session["messages"].append({"role": "assistant", "content": answer})
         return {"answer": answer, "intent": "error"}
 
